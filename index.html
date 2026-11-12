@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Kỳ Môn Độn Giáp MAX</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#101827;color:#fff;
+ font-family:Arial,sans-serif;padding:20px;
+}
+main{max-width:650px;margin:auto}
+header{text-align:center;padding:28px 10px}
+h1{color:#e9bd69;font-size:27px}
+p{color:#c4cbd6;line-height:1.6}
+.card{
+ background:#1d293b;padding:20px;
+ border-radius:14px;margin:15px 0;
+}
+textarea{
+ width:100%;height:110px;padding:14px;
+ border-radius:10px;border:1px solid #526078;
+ background:#101827;color:white;font-size:16px;
+}
+button{
+ border:0;border-radius:10px;padding:14px;
+ background:#d5a94e;color:#172033;
+ font-weight:bold;cursor:pointer;
+}
+.submit{width:100%;margin-top:15px}
+.grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:10px;margin-top:15px
+}
+.grid button{background:#34435b;color:white}
+#result{white-space:pre-wrap;line-height:1.7}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>AI KỲ MÔN ĐỘN GIÁP MAX</h1>
+<p>Trợ lý phân tích Kỳ Môn Độn Giáp thông minh</p>
+<p>Khám phá cơ hội và định hướng tương lai</p>
+</header>
+
+<section class="card">
+<h3>Bạn muốn hỏi điều gì?</h3>
+<textarea id="question"
+placeholder="Nhập câu hỏi của bạn tại đây..."></textarea>
+
+<div class="grid">
+<button onclick="choose('Tài vận')">Tài Vận</button>
+<button onclick="choose('Sự nghiệp')">Sự Nghiệp</button>
+<button onclick="choose('Tình duyên')">Tình Duyên</button>
+<button onclick="choose('Đầu tư')">Đầu Tư</button>
+<button onclick="choose('Kinh doanh')">Kinh Doanh</button>
+<button onclick="choose('Hợp tác')">Hợp Tác</button>
+</div>
+
+<button class="submit" onclick="analyze()">
+LẬP BÀN & PHÂN TÍCH
+</button>
+</section>
+
+<section class="card">
+<h3>Kết quả phân tích</h3>
+<div id="result">
+Vui lòng nhập câu hỏi để bắt đầu.
+</div>
+</section>
+
+<footer>
+<p>AI Kỳ Môn Độn Giáp MAX © 2026</p>
+</footer>
+</main>
+
+<script>
+function choose(topic){
+ document.getElementById('question').value=
+ 'Tôi muốn hỏi về '+topic+'.';
+}
+function analyze(){
+ const q=document.getElementById('question').value.trim();
+ if(!q){alert('Vui lòng nhập câu hỏi');return;}
+ document.getElementById('result').textContent=
+ 'Câu hỏi: '+q+
+ '\n\nHệ thống đã tiếp nhận câu hỏi.'+
+ '\nChức năng lập bàn Kỳ Môn và AI chuyên sâu đang được phát triển.'+
+ '\nKết quả dự đoán chưa được tạo.';
+}
+</script>
+</body>
+</html>
